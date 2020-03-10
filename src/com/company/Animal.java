@@ -14,6 +14,10 @@ public class Animal {
         this.species = species;
         if(species == "dog") {
             this.weight = DEFAULT_DOG_WEIGHT;
+        } else if (species == "lion"){
+            this.weight = 190.0;
+        } else if (species == "mouse"){
+            this.weight = 0.05;
         }
     }
 
