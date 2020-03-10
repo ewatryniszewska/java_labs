@@ -15,12 +15,26 @@ public class Main {
 	    me.pet = new Animal("lion");
 
 	    me.pet.feed();
-		me.pet.feed();
-		me.pet.feed();
-		me.pet.feed();
 
 		me.pet = dog;
 		me.pet.feed();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.feed();
+		me.pet.feed();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+		me.pet.takeAWalk();
+
+
+
 
 
 
