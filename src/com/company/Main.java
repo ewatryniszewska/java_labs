@@ -14,25 +14,14 @@ public class Main {
         me.lastName = "Tryniszewska";
         me.pet = new Animal("lion");
 
-        me.pet.feed();
-
         me.pet = dog;
         me.pet.feed();
         me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
-        me.pet.takeAWalk();
 
-        System.out.println(me.pet.name);
+        me.car = new Car("Opel", 1000.0, "Astra");
+        me.car.registrationNumber = "GD9785";
+        me.car.color = "Red";
+
+        System.out.println(me.car.brand + " " + me.car.model + " " + me.car.engine + " " + me.car.color);
     }
 }
