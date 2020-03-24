@@ -18,13 +18,14 @@ public class Main {
         me.pet.feed();
         me.pet.takeAWalk();
 
-        me.car = new Car("Opel", 1000.0, "Astra");
-        me.car.registrationNumber = "GD9785";
-        me.car.color = "Red";
+        me.setCar(new Car("Opel", 1000.0, "Astra"));
+        me.getCar().registrationNumber = "GD9785";
+        me.getCar().color = "Red";
 
-        System.out.println(me.car.brand + " " + me.car.model + " " + me.car.engine + " " + me.car.color);
+        System.out.println(me.getCar().brand + " " + me.getCar().model + " " + me.getCar().engine + " "
+                + me.getCar().color + " " + me.getCar().registrationNumber);
 
         System.out.println("I earn " + me.getSalary());
-        me.setSalary(200.0);
+        me.setSalary(1500.0);
     }
 }
