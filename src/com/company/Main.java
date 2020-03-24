@@ -23,5 +23,8 @@ public class Main {
         me.car.color = "Red";
 
         System.out.println(me.car.brand + " " + me.car.model + " " + me.car.engine + " " + me.car.color);
+
+        System.out.println("I earn " + me.getSalary());
+        me.setSalary(200.0);
     }
 }
