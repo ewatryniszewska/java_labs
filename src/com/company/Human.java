@@ -40,4 +40,8 @@ public class Human {
 
         System.out.println("I'm sorry, you can't buy a car. You have no money for it.");
     }
+
+    public String toString() {
+        return "Human " + this.firstName + " " + this.lastName;
+    }
 }

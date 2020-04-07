@@ -14,4 +14,9 @@ public class Car {
         this.engine = engine;
         this.model = model;
     }
+
+    public String toString() {
+        return "Car " + this.brand + " " + this.model + " " + this.engine + " "
+                + this.registrationNumber + " " + this.color;
+    }
 }
