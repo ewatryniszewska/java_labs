@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.devices.Car;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class Main {
         lion.name = "Leo";
 
         Human me = new Human();
+
         me.firstName = "Ewa";
         me.lastName = "Tryniszewska";
         me.pet = new Animal("lion");
@@ -18,14 +21,21 @@ public class Main {
         me.pet.feed();
         me.pet.takeAWalk();
 
-        me.setCar(new Car("Opel", 1000.0, "Astra"));
-        me.getCar().registrationNumber = "GD9785";
-        me.getCar().color = "Red";
+        Car myCar = new Car("Opel", 1000.0, "Astra");
+        myCar.registrationNumber = "GD9785";
+        myCar.color = "Red";
+        myCar.price = 1500.0;
 
-        System.out.println(me.getCar().brand + " " + me.getCar().model + " " + me.getCar().engine + " "
-                + me.getCar().color + " " + me.getCar().registrationNumber);
+        me.setCar(myCar);
 
-        System.out.println("I earn " + me.getSalary());
-        me.setSalary(1500.0);
+        Human myHusband = new Human();
+        myHusband.firstName = "Imie meza";
+        myHusband.lastName = "Nazwisko meza";
+        myHusband.setCar(myCar);
+
+        System.out.println(me);
+        System.out.println(myHusband);
+        System.out.println(dog);
+        System.out.println(myCar);
     }
 }

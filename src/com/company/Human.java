@@ -1,6 +1,9 @@
 package com.company;
 
-public class Human {
+import com.company.devices.Car;
+import com.company.devices.Phone;
+
+public class Human extends Animal {
     String firstName;
     String lastName;
     Phone phone;
@@ -8,6 +11,10 @@ public class Human {
     private Car car;
 
     private Double salary = 1000.0;
+
+    public Human() {
+        super("Homo sapiens");
+    }
 
     public Double getSalary() {
         return salary;
@@ -39,5 +46,9 @@ public class Human {
         }
 
         System.out.println("I'm sorry, you can't buy a car. You have no money for it.");
+    }
+
+    public String toString() {
+        return "Human " + this.firstName + " " + this.lastName;
     }
 }
