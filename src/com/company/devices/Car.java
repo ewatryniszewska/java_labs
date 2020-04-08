@@ -1,18 +1,13 @@
 package com.company.devices;
 
-public class Car {
-    public final String brand;
+public class Car extends Device{
     public final Double engine;
-    public final String model;
 
-    public String color;
     public String registrationNumber;
-    public Double price = 2500.0;
 
     public Car(String brand, Double engine, String model) {
-        this.brand = brand;
+        super(brand, model);
         this.engine = engine;
-        this.model = model;
     }
 
     public String toString() {

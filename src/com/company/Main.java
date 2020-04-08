@@ -24,6 +24,7 @@ public class Main {
         Car myCar = new Car("Opel", 1000.0, "Astra");
         myCar.registrationNumber = "GD9785";
         myCar.color = "Red";
+        myCar.price = 1500.0;
 
         me.setCar(myCar);
 
