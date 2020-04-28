@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Main {
 
@@ -37,5 +38,15 @@ public class Main {
         System.out.println(myHusband);
         System.out.println(dog);
         System.out.println(myCar);
+
+        Human person = new Human();
+        person.firstName = "Buyer";
+        me.pet.sell(person, me, 600.0);
+        me.sell(person, me, 1500.0);
+
+        me.phone = new Phone("Samsung", "Galaxy");
+        me.phone.sell(person, me, 1500.0);
+
+        myHusband.getCar().sell(person, myHusband, 100000.0);
     }
 }
