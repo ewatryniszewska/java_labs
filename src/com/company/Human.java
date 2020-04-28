@@ -51,4 +51,10 @@ public class Human extends Animal {
     public String toString() {
         return "Human " + this.firstName + " " + this.lastName;
     }
+
+    @Override
+    public void sell() {
+        System.out.println("Are you joking? It's no way for this.");
+    }
 }
+

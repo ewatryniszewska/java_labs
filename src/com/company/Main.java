@@ -37,5 +37,9 @@ public class Main {
         System.out.println(myHusband);
         System.out.println(dog);
         System.out.println(myCar);
+
+        me.pet.sell();
+        myHusband.sell();
+        myCar.sell();
     }
 }

@@ -1,6 +1,6 @@
 package com.company.devices;
 
-public class Car extends Device{
+public class Car extends Device {
     public final Double engine;
 
     public String registrationNumber;
@@ -13,5 +13,10 @@ public class Car extends Device{
     public String toString() {
         return "Car " + this.brand + " " + this.model + " " + this.engine + " "
                 + this.registrationNumber + " " + this.color;
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Engine turned on.");
     }
 }
