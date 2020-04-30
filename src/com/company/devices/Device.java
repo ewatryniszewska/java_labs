@@ -1,5 +1,6 @@
 package com.company.devices;
 
+import com.company.Human;
 import com.company.Saleable;
 
 public abstract class Device implements Saleable {
@@ -16,8 +17,4 @@ public abstract class Device implements Saleable {
     public abstract String toString();
 
     public abstract void turnOn();
-
-    public void sell() {
-        System.out.println("You sold " + toString());
-    }
 }

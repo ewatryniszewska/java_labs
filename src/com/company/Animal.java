@@ -56,7 +56,17 @@ public class Animal implements Edible, Saleable {
     }
 
     @Override
-    public void sell() {
-        System.out.println("You sold a pet.");
+    public void sell(Human buyer, Human seller, Double price) {
+        if (buyer.getCash() >= price) {
+            buyer.setCash(buyer.getCash() - price);
+            seller.setCash(seller.getCash() + price);
+            buyer.pet = seller.pet;
+            seller.pet = null;
+            System.out.println("Buyer bought a pet: " + buyer.pet + ". Buyer now has " + buyer.getCash());
+            System.out.println("Seller sold a pet, and have nothing: " + seller.pet +
+                    ". Seller now has " + seller.getCash());
+        } else {
+            System.out.println("Seller can't sell a pet and buyer can't buy.");
+        }
     }
 }
