@@ -1,6 +1,8 @@
 package com.company.devices;
 
-import com.company.Human;
+import com.company.creatures.Human;
+
+import java.util.Objects;
 
 public class Car extends Device {
     public final Double engine;
@@ -23,7 +25,7 @@ public class Car extends Device {
     }
 
     public void sell(Human buyer, Human seller, Double price) {
-        if (buyer.getCash() >= price) {
+        if (buyer.getCash() >= price && Objects.nonNull(seller.getCar())) {
             buyer.setCash(buyer.getCash() - price);
             seller.setCash(seller.getCash() + price);
             buyer.setCar(seller.getCar());

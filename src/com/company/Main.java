@@ -1,22 +1,26 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.FarmAnimal;
+import com.company.creatures.Human;
+import com.company.creatures.Pet;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("dog");
+        Animal dog = new Pet("dog");
         dog.name = "Akita";
 
-        Animal lion = new Animal("lion");
-        lion.name = "Leo";
+        Animal chicken = new FarmAnimal("chicken");
+        chicken.name = "Koko";
 
         Human me = new Human();
 
         me.firstName = "Ewa";
         me.lastName = "Tryniszewska";
-        me.pet = new Animal("lion");
+        me.pet = new FarmAnimal("chicken");
 
         me.pet = dog;
         me.pet.feed();
@@ -42,11 +46,17 @@ public class Main {
         Human person = new Human();
         person.firstName = "Buyer";
         me.pet.sell(person, me, 600.0);
+        person.pet.sell(person, me, 600.0);
         me.sell(person, me, 1500.0);
 
         me.phone = new Phone("Samsung", "Galaxy");
         me.phone.sell(person, me, 1500.0);
 
-        myHusband.getCar().sell(person, myHusband, 100000.0);
+        myHusband.getCar().sell(person, myHusband, 800.0);
+        person.getCar().sell(person, myHusband, 800.0);
+
+        person.beEaten();
+        person.pet.beEaten();
+        chicken.beEaten();
     }
 }
