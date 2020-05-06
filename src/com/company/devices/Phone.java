@@ -2,6 +2,8 @@ package com.company.devices;
 
 import com.company.Human;
 
+import java.util.Objects;
+
 public class Phone extends Device {
     public Phone(String brand, String model) {
         super(brand, model);
@@ -19,7 +21,7 @@ public class Phone extends Device {
 
     @Override
     public void sell(Human buyer, Human seller, Double price) {
-        if (buyer.getCash() >= price) {
+        if ((buyer.getCash() >= price) && Objects.nonNull(seller.phone)) {
             buyer.setCash(buyer.getCash() - price);
             seller.setCash(seller.getCash() + price);
             buyer.phone = seller.phone;

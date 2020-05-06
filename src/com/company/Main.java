@@ -42,11 +42,13 @@ public class Main {
         Human person = new Human();
         person.firstName = "Buyer";
         me.pet.sell(person, me, 600.0);
+        person.pet.sell(person, me, 600.0);
         me.sell(person, me, 1500.0);
 
         me.phone = new Phone("Samsung", "Galaxy");
         me.phone.sell(person, me, 1500.0);
 
-        myHusband.getCar().sell(person, myHusband, 100000.0);
+        myHusband.getCar().sell(person, myHusband, 800.0);
+        person.getCar().sell(person, myHusband, 800.0);
     }
 }

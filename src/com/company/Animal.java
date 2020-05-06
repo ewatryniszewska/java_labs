@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.File;
+import java.util.Objects;
 
 public class Animal implements Edible, Saleable {
     String name;
@@ -57,7 +58,7 @@ public class Animal implements Edible, Saleable {
 
     @Override
     public void sell(Human buyer, Human seller, Double price) {
-        if (buyer.getCash() >= price) {
+        if (buyer.getCash() >= price && Objects.nonNull(seller.pet)) {
             buyer.setCash(buyer.getCash() - price);
             seller.setCash(seller.getCash() + price);
             buyer.pet = seller.pet;
