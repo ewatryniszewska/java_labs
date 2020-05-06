@@ -1,16 +1,18 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.Saleable;
 
 import java.io.File;
 import java.util.Objects;
 
-public class Animal implements Edible, Saleable {
-    String name;
-    final String species;
+public abstract class Animal implements Edible, Saleable {
+    public String name;
+    public final String species;
     private Double weight;
-    File pic;
+    public File pic;
 
     static final Double DEFAULT_DOG_WEIGHT = 8.0;
-    static final Double DEFAULT_LION_WEIGHT = 190.0;
+    static final Double DEFAULT_CHICKEN_WEIGHT = 5.0;
     static final Double DEFAULT_MOUSE_WEIGHT = 0.05;
 
     public Animal(String species) {
@@ -19,8 +21,8 @@ public class Animal implements Edible, Saleable {
             case "dog":
                 this.weight = DEFAULT_DOG_WEIGHT;
                 break;
-            case "lion":
-                this.weight = DEFAULT_LION_WEIGHT;
+            case "chicken":
+                this.weight = DEFAULT_CHICKEN_WEIGHT;
                 break;
             case "mouse":
                 this.weight = DEFAULT_MOUSE_WEIGHT;
@@ -28,7 +30,7 @@ public class Animal implements Edible, Saleable {
         }
     }
 
-    void feed() {
+    public void feed() {
         if (this.weight > 0) {
             this.weight++;
             System.out.println("Thanks, my weight is now " + this.weight);
@@ -37,7 +39,7 @@ public class Animal implements Edible, Saleable {
         }
     }
 
-    void takeAWalk() {
+    public void takeAWalk() {
         if (this.weight > 0) {
             this.weight--;
             System.out.println("Thanks for a walk");
@@ -52,8 +54,12 @@ public class Animal implements Edible, Saleable {
 
     @Override
     public void beEaten() {
-        System.out.println("adios");
-        this.weight = 0.0;
+        if (this instanceof Human || this instanceof Pet) {
+            System.out.println("You can't eat me.");
+        } else {
+            System.out.println("Bon appetit.");
+            this.weight = 0.0;
+        }
     }
 
     @Override

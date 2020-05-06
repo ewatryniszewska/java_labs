@@ -1,13 +1,13 @@
-package com.company;
+package com.company.creatures;
 
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
 public class Human extends Animal {
-    String firstName;
-    String lastName;
+    public String firstName;
+    public String lastName;
     public Phone phone;
-    Animal pet;
+    public Animal pet;
 
     private Car car;
     private Double salary = 1000.0;
