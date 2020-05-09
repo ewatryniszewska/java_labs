@@ -4,7 +4,7 @@ import com.company.creatures.Human;
 
 import java.util.Objects;
 
-public class Car extends Device {
+public abstract class Car extends Device {
     public final Double engine;
 
     public String registrationNumber;
@@ -37,4 +37,6 @@ public class Car extends Device {
             System.out.println("Seller can't sell a car, buyer can't buy.");
         }
     }
+
+    public abstract void refuel();
 }
