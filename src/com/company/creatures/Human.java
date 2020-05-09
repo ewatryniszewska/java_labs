@@ -15,6 +15,7 @@ public class Human extends Animal {
 
     public Human() {
         super("Homo sapiens");
+        this.weight = 58.0;
     }
 
     public Double getSalary() {

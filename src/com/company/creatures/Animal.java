@@ -5,12 +5,13 @@ import com.company.Saleable;
 import java.io.File;
 import java.util.Objects;
 
-public abstract class Animal implements Edible, Saleable {
+public abstract class Animal implements Saleable, Feedable {
     public String name;
     public final String species;
-    private Double weight;
+    protected Double weight;
     public File pic;
 
+    static final Double DEFAULT_FOOD_WEIGHT = 2.0;
     static final Double DEFAULT_DOG_WEIGHT = 8.0;
     static final Double DEFAULT_CHICKEN_WEIGHT = 5.0;
     static final Double DEFAULT_MOUSE_WEIGHT = 0.05;
@@ -31,12 +32,17 @@ public abstract class Animal implements Edible, Saleable {
     }
 
     public void feed() {
+        feed(DEFAULT_FOOD_WEIGHT);
+    }
+
+    public void feed(Double foodWeight) {
         if (this.weight > 0) {
-            this.weight++;
+            this.weight += foodWeight;
             System.out.println("Thanks, my weight is now " + this.weight);
-        } else {
-            System.out.println("You can't feed me. I'm dead.");
+            return;
         }
+
+        System.out.println("You can't feed me. I'm dead.");
     }
 
     public void takeAWalk() {
@@ -50,16 +56,6 @@ public abstract class Animal implements Edible, Saleable {
 
     public String toString() {
         return "Animal " + this.name + " " + this.species + " " + this.weight;
-    }
-
-    @Override
-    public void beEaten() {
-        if (this instanceof Human || this instanceof Pet) {
-            System.out.println("You can't eat me.");
-        } else {
-            System.out.println("Bon appetit.");
-            this.weight = 0.0;
-        }
     }
 
     @Override

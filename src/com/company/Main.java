@@ -55,8 +55,10 @@ public class Main {
         myHusband.getCar().sell(person, myHusband, 800.0);
         person.getCar().sell(person, myHusband, 800.0);
 
-        person.beEaten();
-        person.pet.beEaten();
-        chicken.beEaten();
+        person.pet.feed();
+        person.pet.feed();
+        me.feed();
+        me.feed();
+        chicken.feed();
     }
 }
