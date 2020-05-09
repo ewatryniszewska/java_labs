@@ -4,8 +4,9 @@ import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Human;
 import com.company.creatures.Pet;
-import com.company.devices.Car;
-import com.company.devices.Phone;
+import com.company.devices.*;
+
+import java.net.MalformedURLException;
 
 public class Main {
 
@@ -26,7 +27,7 @@ public class Main {
         me.pet.feed();
         me.pet.takeAWalk();
 
-        Car myCar = new Car("Opel", 1000.0, "Astra");
+        Car myCar = new Diesel("Opel", 1000.0, "Astra");
         myCar.registrationNumber = "GD9785";
         myCar.color = "Red";
         myCar.price = 1500.0;
@@ -60,5 +61,21 @@ public class Main {
         me.feed();
         me.feed();
         chicken.feed();
+
+        String[] apps = {"facebook", "skype", "instagram"};
+        try {
+            person.phone.installAnApp(apps);
+            person.phone.installAnApp("Myapp", "1.2");
+            person.phone.installAnApp("Appname", "1.0", new ServerInfo("https", "myownappserver.com", 443));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Car otherCar = new Electric("Tesla", 0.0, "3");
+        otherCar.refuel();
+        myCar.refuel();
+
+        me.setCar(new LPG("Audi", 1800.0, "A4"));
+        me.getCar().refuel();
     }
 }
