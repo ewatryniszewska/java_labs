@@ -7,6 +7,11 @@ public class FarmAnimal extends Animal implements Edible, Feedable {
         super(species);
     }
 
+    public FarmAnimal(String species, Double weight) {
+        super(species);
+        this.weight = weight;
+    }
+
     @Override
     public void beEaten() {
         System.out.println("Bon appetit.");

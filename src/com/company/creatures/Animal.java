@@ -5,7 +5,7 @@ import com.company.Saleable;
 import java.io.File;
 import java.util.Objects;
 
-public abstract class Animal implements Saleable, Feedable {
+public abstract class Animal implements Saleable, Feedable, Comparable<Animal> {
     public String name;
     public final String species;
     protected Double weight;
@@ -59,7 +59,7 @@ public abstract class Animal implements Saleable, Feedable {
     }
 
     @Override
-    public void sell(Human buyer, Human seller, Double price) {
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
         if (buyer.getCash() >= price && Objects.nonNull(seller.pet)) {
             buyer.setCash(buyer.getCash() - price);
             seller.setCash(seller.getCash() + price);
@@ -71,5 +71,10 @@ public abstract class Animal implements Saleable, Feedable {
         } else {
             System.out.println("Seller can't sell a pet and buyer can't buy.");
         }
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return (int) (this.weight - o.weight);
     }
 }
