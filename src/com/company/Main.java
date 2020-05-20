@@ -7,6 +7,8 @@ import com.company.creatures.Pet;
 import com.company.devices.*;
 
 import java.net.MalformedURLException;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
@@ -17,7 +19,7 @@ public class Main {
         Animal chicken = new FarmAnimal("chicken");
         chicken.name = "Koko";
 
-        Human me = new Human();
+        Human me = new Human(3);
 
         me.firstName = "Ewa";
         me.lastName = "Tryniszewska";
@@ -77,5 +79,15 @@ public class Main {
 
         me.setCar(new LPG("Audi", 1800.0, "A4"));
         me.getCar().refuel();
+
+        Scanner in = new Scanner(System.in);
+
+        me.farm[0] = new FarmAnimal("horse", 1000.0);
+        me.farm[1] = new FarmAnimal("chicken", 5.0);
+        me.farm[2] = new FarmAnimal("cow", 1300.0);
+
+        Arrays.sort(me.farm);
+
+        System.out.println(Arrays.toString(me.farm));
     }
 }

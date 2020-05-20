@@ -13,9 +13,20 @@ public class Human extends Animal {
     private Double salary = 1000.0;
     private Double cash = 3000.0;
 
+    private static final Integer DEFAULT_FARM_SIZE = 4;
+
+    public FarmAnimal[] farm;
+
     public Human() {
         super("Homo sapiens");
         this.weight = 58.0;
+        this.farm = new FarmAnimal[DEFAULT_FARM_SIZE];
+    }
+
+    public Human(Integer farmSize) {
+        super("Homo sapiens");
+        this.weight = 58.0;
+        this.farm = new FarmAnimal[farmSize];
     }
 
     public Double getSalary() {

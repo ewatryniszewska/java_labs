@@ -5,7 +5,7 @@ import com.company.Saleable;
 import java.io.File;
 import java.util.Objects;
 
-public abstract class Animal implements Saleable, Feedable {
+public abstract class Animal implements Saleable, Feedable, Comparable<Animal> {
     public String name;
     public final String species;
     protected Double weight;
@@ -71,5 +71,10 @@ public abstract class Animal implements Saleable, Feedable {
         } else {
             System.out.println("Seller can't sell a pet and buyer can't buy.");
         }
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return (int) (this.weight - o.weight);
     }
 }
