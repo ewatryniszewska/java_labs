@@ -59,7 +59,7 @@ public abstract class Animal implements Saleable, Feedable, Comparable<Animal> {
     }
 
     @Override
-    public void sell(Human buyer, Human seller, Double price) {
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
         if (buyer.getCash() >= price && Objects.nonNull(seller.pet)) {
             buyer.setCash(buyer.getCash() - price);
             seller.setCash(seller.getCash() + price);

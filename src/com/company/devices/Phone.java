@@ -12,8 +12,8 @@ public class Phone extends Device {
     private static final Integer DEFAULT_PORT = 80;
 
 
-    public Phone(String brand, String model) {
-        super(brand, model);
+    public Phone(String brand, String model, Integer yearOfProduction) {
+        super(brand, model, yearOfProduction);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Phone extends Device {
     }
 
     @Override
-    public void sell(Human buyer, Human seller, Double price) {
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
         if ((buyer.getCash() >= price) && Objects.nonNull(seller.phone)) {
             buyer.setCash(buyer.getCash() - price);
             seller.setCash(seller.getCash() + price);

@@ -1,12 +1,12 @@
 package com.company.devices;
 
 public class LPG extends Car {
-    public LPG(String brand, Double engine, String model) {
-        super(brand, engine, model);
+    public LPG(String brand, Double engine, String model, Integer yearOfProduction) {
+        super(brand, engine, model, yearOfProduction);
     }
 
     public String toString() {
-        return "LPG car: " + this.brand + this.model + this.engine;
+        return "LPG car: " + this.brand + " " + this.model + " " + this.yearOfProduction;
     }
 
     @Override
