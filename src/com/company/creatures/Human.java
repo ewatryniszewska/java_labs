@@ -60,7 +60,7 @@ public class Human extends Animal {
         if (index >= 0 && index <= this.garage.length - 1) {
             this.garage[index] = car;
             if (car != null) {
-                car.addOwner(this);
+                car.addTransaction(this);
             }
             return;
         }

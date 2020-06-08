@@ -107,7 +107,7 @@ public class Main {
 
         System.out.println("Check that I'm on the owners list of car 'myCar'");
         myCar.ownerOnAList(me);
-        System.out.println("Owners list of car 'myCar': " + myCar.owners);
+        System.out.println("Owners list of car 'myCar': " + myCar.transactions);
 
         System.out.println("\nDoes " + person + " sell the car to " + me + "?");
         myCar.soldACar(person, me);
