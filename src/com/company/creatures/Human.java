@@ -59,6 +59,9 @@ public class Human extends Animal {
     public void setCar(Car car, Integer index) {
         if (index >= 0 && index <= this.garage.length - 1) {
             this.garage[index] = car;
+            if (car != null) {
+                car.addOwner(this);
+            }
             return;
         }
         System.out.println("There is no such place in the garage.");

@@ -39,7 +39,6 @@ public class Main {
         Human myHusband = new Human();
         myHusband.firstName = "Imie meza";
         myHusband.lastName = "Nazwisko meza";
-        myHusband.setCar(myCar, 0);
 
         System.out.println(me);
         System.out.println(myHusband);
@@ -91,18 +90,35 @@ public class Main {
 
         System.out.println(Arrays.toString(me.farm));
 
-        System.out.println("Total price all of cars in garage: " + me.sumPricesOfAllCars());
+        System.out.println("\nTotal price all of cars in garage: " + me.sumPricesOfAllCars());
 
         System.out.println("Cars in garage: " + Arrays.toString(me.getGarage()));
         me.sortCars();
         System.out.println("Cars sorted: " + Arrays.toString(me.getGarage()));
 
-        System.out.println(Arrays.toString(me.getGarage()));
-        System.out.println(Arrays.toString(person.getGarage()));
+        System.out.println("\nMy garage: " + Arrays.toString(me.getGarage()));
+        System.out.println("Person garage: " + Arrays.toString(person.getGarage()));
 
-        me.getCar(0).sell(person, me, 800.0);
+        myCar = me.getCar(0);
+        myCar.sell(person, me, 800.0);
 
-        System.out.println(Arrays.toString(me.getGarage()));
-        System.out.println(Arrays.toString(person.getGarage()));
+        System.out.println("My garage after transaction: " + Arrays.toString(me.getGarage()));
+        System.out.println("Person garage after transaction: " + Arrays.toString(person.getGarage()) + "\n");
+
+        System.out.println("Check that I'm on the owners list of car 'myCar'");
+        myCar.ownerOnAList(me);
+        System.out.println("Owners list of car 'myCar': " + myCar.owners);
+
+        System.out.println("\nDoes " + person + " sell the car to " + me + "?");
+        myCar.soldACar(person, me);
+        System.out.println("Does " + me + " sell the car to " + person + "?");
+        myCar.soldACar(me, person);
+
+        System.out.println("\nAt first the car " + myCar + " was a part of " + myCar.numberOfTransaction() + " transactions");
+        System.out.println("The other car " + otherCar + " was a part of " + otherCar.numberOfTransaction() + " transactions");
+        System.out.println("Doing 2 more transactions on " + myCar + "...");
+        myCar.sell(me, person, 800.0);
+        myCar.sell(person, me, 800.0);
+        System.out.println("Now the car " + myCar + " was a part of " + myCar.numberOfTransaction() + " transactions");
     }
 }
