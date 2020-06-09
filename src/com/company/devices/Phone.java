@@ -4,9 +4,13 @@ import com.company.creatures.Human;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class Phone extends Device {
+    public Set<Application> applicationSet;
+
     private static final String DEFAULT_SERVER_ADDRESS = "myserver.net";
     private static final String DEFAULT_PROTOCOL = "http";
     private static final Integer DEFAULT_PORT = 80;
@@ -14,6 +18,7 @@ public class Phone extends Device {
 
     public Phone(String brand, String model, Integer yearOfProduction) {
         super(brand, model, yearOfProduction);
+        applicationSet = new HashSet<>();
     }
 
     @Override
@@ -63,5 +68,52 @@ public class Phone extends Device {
 
     public void installAnApp(URL url) {
         System.out.println("App " + url.getFile() + " was installed");
+    }
+
+    public void installAnApp(String appName, String appVersion, Double appPrice, Human owner) {
+        if (owner.getCash() >= appPrice) {
+            applicationSet.add(new Application(appName, appVersion, appPrice));
+            owner.setCash(owner.getCash() - appPrice);
+            System.out.println(appName + " was installed.");
+            return;
+        }
+        System.out.println("You have not enough money to buy this app.");
+    }
+
+    public void isAppInstalled(Application app) {
+        isAppInstalled(app.name);
+    }
+
+    public void isAppInstalled(String appName) {
+        for (Application app : applicationSet) {
+            if (app.name.equals(appName)) {
+                System.out.println(appName + " was installed.");
+                return;
+            }
+        }
+        System.out.println(appName + " wasn't installed.");
+    }
+
+    public void freeApp() {
+        int i = 0;
+        for (Application app : applicationSet) {
+            if (app.price == 0.0) {
+                System.out.println(app);
+                i++;
+            }
+        }
+        if (i == 0) {
+            System.out.println("There is no application for free");
+        }
+    }
+
+    public Double valueOfApp() {
+        Double sum = 0.0;
+        for (Application app : applicationSet) {
+            if (app.price > 0.0) {
+                sum += app.price;
+            }
+        }
+        return sum;
     }
 }

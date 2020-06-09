@@ -120,5 +120,27 @@ public class Main {
         myCar.sell(me, person, 800.0);
         myCar.sell(person, me, 800.0);
         System.out.println("Now the car " + myCar + " was a part of " + myCar.numberOfTransaction() + " transactions");
+
+        Phone myPhone = new Phone("Sony", "Xperia", 2019);
+        me.phone = myPhone;
+
+        System.out.println("\nInstall Skype on my phone... ");
+        me.phone.installAnApp("Skype", "10.0.2", 50.0, me);
+        System.out.println("Install Spotify on my phone... ");
+        me.phone.installAnApp("Spotify", "Premium", 25.0, me);
+        System.out.println("Install facebook on my phone... ");
+        me.phone.installAnApp("Facebook", "2.1.5", 0.0, me);
+        System.out.println("Install FreeApp on my phone... ");
+        me.phone.installAnApp("FreeApp", "2.1.5", 0.0, me);
+
+        System.out.println("\nWas the application installed?");
+        Application skype = new Application("Skype", "10.0.2", 50.0);
+        me.phone.isAppInstalled(skype);
+        me.phone.isAppInstalled("Facebook");
+
+        System.out.println("\nFree application on my phone: ");
+        me.phone.freeApp();
+
+        System.out.println("\nValue of all installed app: " + me.phone.valueOfApp());
     }
 }
