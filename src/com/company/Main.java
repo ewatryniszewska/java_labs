@@ -142,5 +142,17 @@ public class Main {
         me.phone.freeApp();
 
         System.out.println("\nValue of all installed app: " + me.phone.valueOfApp());
+
+        System.out.println("\nSorted apps (alphabetical ascending):");
+        me.phone.alphabeticAppSort();
+        System.out.println("Sorted apps (price ascending):");
+        me.phone.priceAppSort();
+
+        System.out.println("\nAdding more apps for better testing... ");
+        me.phone.installAnApp("Viber", "2.0.1", 11.1, me);
+        me.phone.installAnApp("Bank ABC", "3.3.3", 0.0, me);
+        System.out.println("\nOrder with new apps: ");
+        me.phone.alphabeticAppSort();
+        me.phone.priceAppSort();
     }
 }

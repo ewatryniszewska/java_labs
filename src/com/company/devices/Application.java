@@ -12,6 +12,6 @@ public class Application {
     }
 
     public String toString() {
-        return this.name + " version " + this.version + " price " + this.price;
+        return this.name + " version: " + this.version + " price: " + this.price;
     }
 }
